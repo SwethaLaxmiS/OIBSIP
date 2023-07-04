@@ -1,0 +1,30 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class numberguess {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int randomnumber = rand.nextInt(100) + 1;
+        //System.out.println("Random Number is" + randomnumber);
+
+        int tryCount = 0;
+        while(true) {
+            System.out.println("Enter your number guess (1-100):");
+
+            Scanner scanner = new Scanner(System.in);
+            int Guessoftheplayer = scanner.nextInt();
+            tryCount++;
+
+            if (Guessoftheplayer == randomnumber) {
+                System.out.println("Correct guess");
+                System.out.println("Total number of guesses : " +tryCount);
+                break;
+            }
+            else if (randomnumber > Guessoftheplayer) {
+                System.out.println("The number is higher. Guess Again!");
+            } else {
+                System.out.println("The number is lower. Guess Again!");
+            }
+        }
+    }
+}
